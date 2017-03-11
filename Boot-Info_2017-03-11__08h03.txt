@@ -1,0 +1,921 @@
+ Boot Info Script cfd9efe + Boot-Repair extra info      [Boot-Info 26Apr2016]
+
+
+============================= Boot Info Summary: ===============================
+
+ => Grub2 (v2.00) is installed in the MBR of /dev/sda and looks at sector 
+    131999744 of the same hard drive for core.img. core.img is at this 
+    location and looks for (,gpt2)/boot/grub. It also embeds following 
+    components:
+    
+    modules
+    ---------------------------------------------------------------------------
+    fshelp ext2 part_gpt biosdisk
+    ---------------------------------------------------------------------------
+ => Syslinux MBR (5.00 and higher) is installed in the MBR of /dev/sdb.
+
+sda1: __________________________________________________________________________
+
+    File system:       vfat
+    Boot sector type:  FAT32
+    Boot sector info:  No errors found in the Boot Parameter Block.
+    Operating System:  
+    Boot files:        
+
+sda2: __________________________________________________________________________
+
+    File system:       ext2
+    Boot sector type:  -
+    Boot sector info: 
+    Operating System:  
+    Boot files:        
+
+sda3: __________________________________________________________________________
+
+    File system:       LVM2_member
+    Boot sector type:  -
+    Boot sector info: 
+
+sdb1: __________________________________________________________________________
+
+    File system:       vfat
+    Boot sector type:  SYSLINUX 4.07
+    Boot sector info:  Syslinux looks at sector 32776 of /dev/sdb1 for its 
+                       second stage. The integrity check of Syslinux failed. 
+                       No errors found in the Boot Parameter Block.
+    Operating System:  
+    Boot files:        /boot/grub/grub.cfg /syslinux.cfg /casper/vmlinuz.efi 
+                       /EFI/BOOT/grubx64.efi /ldlinux.sys
+
+ubuntu-vg-root: ________________________________________________________________
+
+    File system:       ext4
+    Boot sector type:  -
+    Boot sector info: 
+    Operating System:  Ubuntu 14.04.4 LTS
+    Boot files:        /etc/fstab
+
+ubuntu-vg-swap_1: ______________________________________________________________
+
+    File system:       swap
+    Boot sector type:  -
+    Boot sector info: 
+
+============================ Drive/Partition Info: =============================
+
+Drive: sda _____________________________________________________________________
+
+Disk /dev/sda: 1000.2 GB, 1000204886016 bytes
+255 heads, 63 sectors/track, 121601 cylinders, total 1953525168 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 4096 bytes
+
+Partition  Boot  Start Sector    End Sector  # of Sectors  Id System
+
+/dev/sda1                   1 1,953,525,167 1,953,525,167  ee GPT
+
+
+GUID Partition Table detected.
+
+Partition  Attrs   Start Sector    End Sector  # of Sectors System
+/dev/sda1                 2,048     1,050,623     1,048,576 EFI System partition
+/dev/sda2             1,050,624     1,550,335       499,712 Data partition (Linux)
+/dev/sda3             1,550,336 1,953,523,711 1,951,973,376 Logical Volume Manager (LVM) partition (Linux)
+
+Attributes: R=Required, N=No Block IO, B=Legacy BIOS Bootable, +=More bits set
+
+Drive: sdb _____________________________________________________________________
+
+Disk /dev/sdb: 8004 MB, 8004304896 bytes
+255 heads, 63 sectors/track, 973 cylinders, total 15633408 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+
+Partition  Boot  Start Sector    End Sector  # of Sectors  Id System
+
+/dev/sdb1    *          2,048    15,633,407    15,631,360   c W95 FAT32 (LBA)
+
+
+"blkid" output: ________________________________________________________________
+
+Device           UUID                                   TYPE       LABEL
+
+/dev/loop0                                              squashfs   
+/dev/mapper/ubuntu--vg-root 1f2a1e59-a088-4718-ae22-0211aae78720   ext4       
+/dev/mapper/ubuntu--vg-swap_1 162f9eb6-a5c2-48ef-93df-744adc2583ad   swap       
+/dev/sda1        8A07-484E                              vfat       
+/dev/sda2        819b6a10-b264-4f34-aff8-d3a93b6140fb   ext2       
+/dev/sda3        bNqjyP-7riJ-dTU4-etLX-caqC-2Wgk-Bgdjkj LVM2_member 
+/dev/sdb1        AE52-4844                              vfat       UBUNTU 14_0
+
+========================= "ls -l /dev/disk/by-id" output: ======================
+
+total 0
+lrwxrwxrwx 1 root root  9 Mar 11 08:37 ata-ST1000LM024_HN-M101MBB_S314JB0G103616 -> ../../sda
+lrwxrwxrwx 1 root root 10 Mar 11 08:39 ata-ST1000LM024_HN-M101MBB_S314JB0G103616-part1 -> ../../sda1
+lrwxrwxrwx 1 root root 10 Mar 11 08:37 ata-ST1000LM024_HN-M101MBB_S314JB0G103616-part2 -> ../../sda2
+lrwxrwxrwx 1 root root 10 Mar 11 07:38 ata-ST1000LM024_HN-M101MBB_S314JB0G103616-part3 -> ../../sda3
+lrwxrwxrwx 1 root root  9 Mar 11 07:38 ata-TSSTcorp_DVD+_-RW_SU-208GB_S16A6YFG500J1N -> ../../sr0
+lrwxrwxrwx 1 root root 10 Mar 11 08:37 dm-name-ubuntu--vg-root -> ../../dm-0
+lrwxrwxrwx 1 root root 10 Mar 11 08:37 dm-name-ubuntu--vg-swap_1 -> ../../dm-1
+lrwxrwxrwx 1 root root 10 Mar 11 08:37 dm-uuid-LVM-3QvTMSmxgNw0xPy8l21VAOBxxdU23n0p0brQlIb0EFDvXdffYaJuqY1ta4slxiTv -> ../../dm-0
+lrwxrwxrwx 1 root root 10 Mar 11 08:37 dm-uuid-LVM-3QvTMSmxgNw0xPy8l21VAOBxxdU23n0pqY9jQnG7Il5dk10wOVF1t5hfAACADYEM -> ../../dm-1
+lrwxrwxrwx 1 root root  9 Mar 11 08:37 usb-SanDisk_USB_Flash_Drive_4C532000060523113193-0:0 -> ../../sdb
+lrwxrwxrwx 1 root root 10 Mar 11 07:38 usb-SanDisk_USB_Flash_Drive_4C532000060523113193-0:0-part1 -> ../../sdb1
+lrwxrwxrwx 1 root root  9 Mar 11 08:37 wwn-0x50004cf20f12fd36 -> ../../sda
+lrwxrwxrwx 1 root root 10 Mar 11 08:39 wwn-0x50004cf20f12fd36-part1 -> ../../sda1
+lrwxrwxrwx 1 root root 10 Mar 11 08:37 wwn-0x50004cf20f12fd36-part2 -> ../../sda2
+lrwxrwxrwx 1 root root 10 Mar 11 07:38 wwn-0x50004cf20f12fd36-part3 -> ../../sda3
+
+========================= "ls -R /dev/mapper/" output: =========================
+
+/dev/mapper:
+control
+ubuntu--vg-root
+ubuntu--vg-swap_1
+
+================================ Mount points: =================================
+
+Device           Mount_Point              Type       Options
+
+/dev             /mnt/boot-sav/mapper/ubuntu--vg-root/dev none       (rw,bind)
+/dev             /mnt/boot-sav/mapper/ubuntu--vg-root/dev none       (rw,bind)
+/dev             /mnt/boot-sav/mapper/ubuntu--vg-root/dev none       (rw,bind)
+/dev/loop0       /rofs                    squashfs   (ro,noatime)
+/dev/mapper/ubuntu--vg-root /mnt/boot-sav/mapper/ubuntu--vg-root ext4       (rw)
+/dev/pts         /mnt/boot-sav/mapper/ubuntu--vg-root/dev/pts none       (rw,bind)
+/dev/sda1        /mnt/boot-sav/mapper/ubuntu--vg-root/boot/efi vfat       (rw)
+/dev/sdb1        /cdrom                   vfat       (ro,noatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro)
+
+
+=================== sda2: Location of files loaded by Grub: ====================
+
+           GiB - GB             File                                 Fragment(s)
+
+   0.561916351 = 0.603353088    vmlinuz-4.2.0-27-generic                      12
+   0.550198555 = 0.590771200    vmlinuz-4.2.0-27-generic.efi.signed           15
+   0.723351479 = 0.776692736    initrd.img-4.2.0-27-generic                   19
+
+=========================== sdb1/boot/grub/grub.cfg: ===========================
+
+--------------------------------------------------------------------------------
+
+if loadfont /boot/grub/font.pf2 ; then
+	set gfxmode=auto
+	insmod efi_gop
+	insmod efi_uga
+	insmod gfxterm
+	terminal_output gfxterm
+fi
+
+set menu_color_normal=white/black
+set menu_color_highlight=black/light-gray
+
+menuentry "Try Ubuntu without installing" {
+	set gfxpayload=keep
+	linux	/casper/vmlinuz.efi  file=/cdrom/preseed/ubuntu.seed boot=casper quiet splash --
+	initrd	/casper/initrd.lz
+}
+menuentry "Install Ubuntu" {
+	set gfxpayload=keep
+	linux	/casper/vmlinuz.efi  file=/cdrom/preseed/ubuntu.seed boot=casper only-ubiquity quiet splash --
+	initrd	/casper/initrd.lz
+}
+menuentry "OEM install (for manufacturers)" {
+	set gfxpayload=keep
+	linux	/casper/vmlinuz.efi  file=/cdrom/preseed/ubuntu.seed boot=casper only-ubiquity quiet splash oem-config/enable=true --
+	initrd	/casper/initrd.lz
+}
+menuentry "Check disc for defects" {
+	set gfxpayload=keep
+	linux	/casper/vmlinuz.efi  boot=casper integrity-check quiet splash --
+	initrd	/casper/initrd.lz
+}
+--------------------------------------------------------------------------------
+
+============================== sdb1/syslinux.cfg: ==============================
+
+--------------------------------------------------------------------------------
+DEFAULT loadconfig
+
+LABEL loadconfig
+  CONFIG /isolinux/isolinux.cfg
+  APPEND /isolinux/
+--------------------------------------------------------------------------------
+
+=================== sdb1: Location of files loaded by Grub: ====================
+
+           GiB - GB             File                                 Fragment(s)
+
+            ?? = ??             boot/grub/grub.cfg                             1
+
+================= sdb1: Location of files loaded by Syslinux: ==================
+
+           GiB - GB             File                                 Fragment(s)
+
+            ?? = ??             syslinux.cfg                                   1
+            ?? = ??             ldlinux.sys                                    1
+
+========================== ubuntu-vg-root/etc/fstab: ===========================
+
+--------------------------------------------------------------------------------
+# /etc/fstab: static file system information.
+#
+# Use 'blkid' to print the universally unique identifier for a
+# device; this may be used with UUID= as a more robust way to name devices
+# that works even if disks are added and removed. See fstab(5).
+#
+# <file system> <mount point>   <type>  <options>       <dump>  <pass>
+/dev/mapper/ubuntu--vg-root /               ext4    errors=remount-ro 0       1
+# /boot was on /dev/sda2 during installation
+#UUID=819b6a10-b264-4f34-aff8-d3a93b6140fb /boot           ext2    defaults        0       2
+# /boot/efi was on /dev/sda1 during installation
+#UUID=8A07-484E  /boot/efi       vfat    defaults        0       1
+/dev/mapper/ubuntu--vg-swap_1 none            swap    sw              0       0
+#UUID=819b6a10-b264-4f34-aff8-d3a93b6140fb	/boot	ext2	defaults	0	2
+UUID=8A07-484E	/boot/efi	vfat	defaults	0	1
+--------------------------------------------------------------------------------
+
+============== ubuntu-vg-root: Location of files loaded by Grub: ===============
+
+           GiB - GB             File                                 Fragment(s)
+
+   1.993728638 = 2.140749824    boot/vmlinuz-3.13.0-112-generic                1
+   1.644657135 = 1.765937152    boot/initrd.img-4.2.0-27-generic               1
+   1.644657135 = 1.765937152    initrd.img                                     1
+
+=============================== StdErr Messages: ===============================
+
+File descriptor 9 (/proc/27492/mounts) leaked on lvs invocation. Parent PID 31582: bash
+File descriptor 63 (pipe:[71496]) leaked on lvs invocation. Parent PID 31582: bash
+File descriptor 9 (/proc/27492/mounts) leaked on lvchange invocation. Parent PID 32713: bash
+File descriptor 63 (pipe:[71496]) leaked on lvchange invocation. Parent PID 32713: bash
+File descriptor 9 (/proc/27492/mounts) leaked on lvchange invocation. Parent PID 32713: bash
+File descriptor 63 (pipe:[71496]) leaked on lvchange invocation. Parent PID 32713: bash
+mdadm: No arrays found in config file or automatically
+
+ADDITIONAL INFORMATION :
+=================== log of boot-repair 2017-03-11__08h03 ===================
+boot-repair version : 4ppa40
+boot-sav version : 4ppa40
+glade2script version : 3.2.3~ppa1
+boot-sav-extra version : 4ppa40
+BLKID BEFORE LVM ACTIVATION:
+/dev/loop0: TYPE="squashfs"
+/dev/sda1: UUID="8A07-484E" TYPE="vfat"
+/dev/sda2: UUID="819b6a10-b264-4f34-aff8-d3a93b6140fb" TYPE="ext2"
+/dev/sda3: UUID="bNqjyP-7riJ-dTU4-etLX-caqC-2Wgk-Bgdjkj" TYPE="LVM2_member"
+/dev/sdb1: LABEL="UBUNTU 14_0" UUID="AE52-4844" TYPE="vfat"
+/dev/mapper/ubuntu--vg-root: UUID="1f2a1e59-a088-4718-ae22-0211aae78720" TYPE="ext4"
+/dev/mapper/ubuntu--vg-swap_1: UUID="162f9eb6-a5c2-48ef-93df-744adc2583ad" TYPE="swap"
+MODPROBE
+VGSCAN
+File descriptor 9 (/proc/27492/mounts) leaked on vgscan invocation. Parent PID 27501: /bin/bash
+Reading all physical volumes.  This may take a while...
+Found volume group "ubuntu-vg" using metadata type lvm2
+VGCHANGE
+File descriptor 9 (/proc/27492/mounts) leaked on vgchange invocation. Parent PID 27501: /bin/bash
+2 logical volume(s) in volume group "ubuntu-vg" now active
+File descriptor 9 (/proc/27492/mounts) leaked on lvscan invocation. Parent PID 27501: /bin/bash
+LVSCAN:
+ACTIVE            '/dev/ubuntu-vg/root' [922.85 GiB] inherit
+ACTIVE            '/dev/ubuntu-vg/swap_1' [7.91 GiB] inherit
+Is there RAID on this computer? yes
+
+BLKID BEFORE RAID ACTIVATION:
+/dev/loop0: TYPE="squashfs"
+/dev/sda1: UUID="8A07-484E" TYPE="vfat"
+/dev/sda2: UUID="819b6a10-b264-4f34-aff8-d3a93b6140fb" TYPE="ext2"
+/dev/sda3: UUID="bNqjyP-7riJ-dTU4-etLX-caqC-2Wgk-Bgdjkj" TYPE="LVM2_member"
+/dev/sdb1: LABEL="UBUNTU 14_0" UUID="AE52-4844" TYPE="vfat"
+/dev/mapper/ubuntu--vg-root: UUID="1f2a1e59-a088-4718-ae22-0211aae78720" TYPE="ext4"
+/dev/mapper/ubuntu--vg-swap_1: UUID="162f9eb6-a5c2-48ef-93df-744adc2583ad" TYPE="swap"
+Scanning MDraid Partitions
+mdadm: No arrays found in config file or automatically
+mdadm --detail --scan:
+dmraid packages needed
+W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/trusty/InRelease
+
+W: Failed to fetch http://security.ubuntu.com/ubuntu/dists/trusty-security/InRelease
+
+W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/trusty-updates/InRelease
+
+W: Failed to fetch http://ppa.launchpad.net/yannubuntu/boot-repair/ubuntu/dists/trusty/InRelease
+
+W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/trusty/Release.gpg  Unable to connect to 10.3.100.207:8080:
+
+W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/trusty-updates/Release.gpg  Unable to connect to 10.3.100.207:8080:
+
+W: Failed to fetch http://ppa.launchpad.net/yannubuntu/boot-repair/ubuntu/dists/trusty/Release.gpg  Unable to connect to 10.3.100.207:8080:
+
+W: Failed to fetch http://security.ubuntu.com/ubuntu/dists/trusty-security/Release.gpg  Unable to connect to 10.3.100.207:8080:
+
+W: Some index files failed to download. They have been ignored, or old ones used instead.
+E: Could not get lock /var/lib/dpkg/lock - open (11: Resource temporarily unavailable)
+E: Unable to lock the administration directory (/var/lib/dpkg/), is another process using it?
+E: Could not get lock /var/lib/dpkg/lock - open (11: Resource temporarily unavailable)
+E: Unable to lock the administration directory (/var/lib/dpkg/), is another process using it?
+W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/trusty/InRelease
+
+W: Failed to fetch http://security.ubuntu.com/ubuntu/dists/trusty-security/InRelease
+
+W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/trusty-updates/InRelease
+
+W: Failed to fetch http://ppa.launchpad.net/yannubuntu/boot-repair/ubuntu/dists/trusty/InRelease
+
+W: Failed to fetch http://ppa.launchpad.net/yannubuntu/boot-repair/ubuntu/dists/trusty/Release.gpg  Unable to connect to 10.3.100.207:8080:
+
+W: Failed to fetch http://security.ubuntu.com/ubuntu/dists/trusty-security/Release.gpg  Unable to connect to 10.3.100.207:8080:
+
+W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/trusty/Release.gpg  Unable to connect to 10.3.100.207:8080:
+
+W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/trusty-updates/Release.gpg  Unable to connect to 10.3.100.207:8080:
+
+W: Some index files failed to download. They have been ignored, or old ones used instead.
+E: Could not get lock /var/lib/dpkg/lock - open (11: Resource temporarily unavailable)
+E: Unable to lock the administration directory (/var/lib/dpkg/), is another process using it?
+E: Could not get lock /var/lib/dpkg/lock - open (11: Resource temporarily unavailable)
+E: Unable to lock the administration directory (/var/lib/dpkg/), is another process using it?
+Could not install dmraid
+Please close all your package managers (Software Center, Update Manager, Synaptic, ...). Then try again.
+Warning: no DMRAID nor MD_ARRAY.
+boot-repair is executed in live-session (Ubuntu 14.04.4 LTS, trusty, Ubuntu, x86_64)
+CPU op-mode(s):        32-bit, 64-bit
+BOOT_IMAGE=/casper/vmlinuz.efi file=/cdrom/preseed/ubuntu.seed boot=casper quiet splash --
+ls: cannot access /home/usr/.config: No such file or directory
+Set sda as corresponding disk of mapper/ubuntu--vg-root
+
+WARNING: GPT (GUID Partition Table) detected on '/dev/sda'! The util fdisk doesn't support GPT. Use GNU Parted.
+
+Disk /dev/mapper/ubuntu--vg-root doesn't contain a valid partition table
+Disk /dev/mapper/ubuntu--vg-swap_1 doesn't contain a valid partition table
+
+=================== os-prober:
+/dev/mapper/ubuntu--vg-root:Ubuntu 14.04.4 LTS (14.04):Ubuntu:linux
+
+=================== blkid:
+/dev/loop0: TYPE="squashfs"
+/dev/sda1: UUID="8A07-484E" TYPE="vfat"
+/dev/sda2: UUID="819b6a10-b264-4f34-aff8-d3a93b6140fb" TYPE="ext2"
+/dev/sda3: UUID="bNqjyP-7riJ-dTU4-etLX-caqC-2Wgk-Bgdjkj" TYPE="LVM2_member"
+/dev/sdb1: LABEL="UBUNTU 14_0" UUID="AE52-4844" TYPE="vfat"
+/dev/mapper/ubuntu--vg-root: UUID="1f2a1e59-a088-4718-ae22-0211aae78720" TYPE="ext4"
+/dev/mapper/ubuntu--vg-swap_1: UUID="162f9eb6-a5c2-48ef-93df-744adc2583ad" TYPE="swap"
+
+Set sda as corresponding disk of mapper/ubuntu--vg-root
+
+1 disks with OS, 1 OS : 1 Linux, 0 MacOS, 0 Windows, 0 unknown type OS.
+
+
+WARNING: GPT (GUID Partition Table) detected on '/dev/sda'! The util sfdisk doesn't support GPT. Use GNU Parted.
+
+
+WARNING: GPT (GUID Partition Table) detected on '/dev/sda'! The util fdisk doesn't support GPT. Use GNU Parted.
+
+/boot/efi detected in the fstab of mapper/ubuntu--vg-root: UUID=8A07-484E	 (sda1)
+
+=================== efibootmgr -v
+BootCurrent: 0007
+Timeout: 1 seconds
+BootOrder: 0001,0002,0003,0004,0005,0007
+Boot0001* Diskette Drive	BIOS(1,0,4469736b6574746520447269766500)..BO
+Boot0002* Internal HDD	BIOS(2,0,50303a205354313030304c4d30323420484e2d4d3130314d42422020202000)..BO
+Boot0003* USB Storage Device	BIOS(5,0,53616e4469736b2055534220466c61736820447269766520312e323600)..BO
+Boot0004* CD/DVD/CD-RW Drive	BIOS(3,0,50313a2054535354636f7270204456442b2f2d52572053552d323038474200)..BO
+Boot0005* Onboard NIC	BIOS(6,0,5265616c74656b20505845204230372044303000)..BO
+Boot0007* UEFI: SanDisk USB Flash Drive 1.26	ACPI(a0341d0,0)PCI(14,0)USB(1,0)HD(1,800,ee8400,09daedb0)..BO
+Boot0010* USB Storage Device	BIOS(5,0,5553422053746f726167652044657669636500)..BO
+Boot0011* CD/DVD/CD-RW Drive	BIOS(3,0,50313a2054535354636f7270204456442b2f2d52572053552d323038474200)..BO
+Boot0012* Onboard NIC	BIOS(6,0,5265616c74656b20505845204230372044303000)..BO
+Boot0014* UEFI: ST1000LM024 HN-M101MBB	ACPI(a0341d0,0)PCI(1f,2)03120a000000ffff0000HD(1,800,fa000,0a9a9f6b-8cff-4eac-b1ff-87335f8e6f23)..BO
+BootFFF7* Fix my Dell          	Vendor(5990c250-676b-4ff7-8a0d-529319d0b254,)
+BootFFF8* Fix my Dell          	Vendor(5990c250-676b-4ff7-8a0d-529319d0b254,)
+BootFFFB* Diagnostic Boot      	Vendor(5990c250-676b-4ff7-8a0d-529319d0b254,)
+BootFFFC* Temporary Boot Menu  	Vendor(5990c250-676b-4ff7-8a0d-529319d0b254,)
+BootFFFD* Graphic Setup        	Vendor(5990c250-676b-4ff7-8a0d-529319d0b254,)
+BootFFFE* Text Setup           	Vendor(5990c250-676b-4ff7-8a0d-529319d0b254,)
+
+=================== UEFI/Legacy mode:
+BIOS is EFI-compatible, and is setup in EFI-mode for this live-session.
+SecureBoot disabled. (maybe sec-boot, Please report this message to boot.repair@gmail.com)
+
+
+=================== PARTITIONS & DISKS:
+sda1	: sda,	not-sepboot,	no-grubenv	nogrub,	no-docgrub,	no-update-grub,	32,	no-boot,	no-os,	is-correct-EFI,	part-has-no-fstab,	part-has-no-fstab,	no-nt,	no-winload,	no-recov-nor-hid,	no-bmgr,	notwinboot,	nopakmgr,	nogrubinstall,	no---usr,	part-has-no-fstab,	not-sep-usr,	standard,	not-far,	/mnt/boot-sav/mapper/ubuntu--vg-root/boot/efi.
+sda2	: sda,	is-sepboot,	no-grubenv	nogrub,	no-docgrub,	no-update-grub,	32,	no-boot,	no-os,	not--efi--part,	part-has-no-fstab,	part-has-no-fstab,	no-nt,	no-winload,	no-recov-nor-hid,	no-bmgr,	notwinboot,	nopakmgr,	nogrubinstall,	no---usr,	part-has-no-fstab,	not-sep-usr,	standard,	not-far,	/mnt/boot-sav/mapper/ubuntu--vg-root/boot.
+mapper/ubuntu--vg-root	: sda,	not-sepboot,	no-grubenv	nogrub,	signed ,	no-update-grub,	64,	with-boot,	is-os,	not--efi--part,	fstab-without-boot,	fstab-has-goodEFI,	no-nt,	no-winload,	no-recov-nor-hid,	no-bmgr,	notwinboot,	apt-get,	nogrubinstall,	with--usr,	fstab-without-usr,	not-sep-usr,	standard,	not-far,	/mnt/boot-sav/mapper/ubuntu--vg-root.
+
+sda	: GPT,	no-BIOS_boot,	has-correctEFI, 	not-usb,	has-os,	2048 sectors * 512 bytes
+
+
+=================== parted -l:
+
+Model: ATA ST1000LM024 HN-M (scsi)
+Disk /dev/sda: 1000GB
+Sector size (logical/physical): 512B/4096B
+Partition Table: gpt
+
+Number  Start   End     Size   File system  Name                  Flags
+1      1049kB  538MB   537MB  fat32        EFI System Partition  boot
+2      538MB   794MB   256MB  ext2
+3      794MB   1000GB  999GB                                     lvm
+
+
+Model: SanDisk USB Flash Drive (scsi)
+Disk /dev/sdb: 8004MB
+Sector size (logical/physical): 512B/512B
+Partition Table: msdos
+
+Number  Start   End     Size    Type     File system  Flags
+1      1049kB  8004MB  8003MB  primary  fat32        boot, lba
+
+
+Model: Linux device-mapper (linear) (dm)
+Disk /dev/mapper/ubuntu--vg-swap_1: 8493MB
+Sector size (logical/physical): 512B/4096B
+Partition Table: loop
+
+Number  Start  End     Size    File system     Flags
+1      0.00B  8493MB  8493MB  linux-swap(v1)
+
+
+Model: Linux device-mapper (linear) (dm)
+Disk /dev/mapper/ubuntu--vg-root: 991GB
+Sector size (logical/physical): 512B/4096B
+Partition Table: loop
+
+Number  Start  End    Size   File system  Flags
+1      0.00B  991GB  991GB  ext4
+
+=================== parted -lm:
+
+BYT;
+/dev/sda:1000GB:scsi:512:4096:gpt:ATA ST1000LM024 HN-M;
+1:1049kB:538MB:537MB:fat32:EFI System Partition:boot;
+2:538MB:794MB:256MB:ext2::;
+3:794MB:1000GB:999GB:::lvm;
+
+BYT;
+/dev/sdb:8004MB:scsi:512:512:msdos:SanDisk USB Flash Drive;
+1:1049kB:8004MB:8003MB:fat32::boot, lba;
+
+BYT;
+/dev/mapper/ubuntu--vg-swap_1:8493MB:dm:512:4096:loop:Linux device-mapper (linear);
+1:0.00B:8493MB:8493MB:linux-swap(v1)::;
+
+BYT;
+/dev/mapper/ubuntu--vg-root:991GB:dm:512:4096:loop:Linux device-mapper (linear);
+1:0.00B:991GB:991GB:ext4::;
+
+=================== lsblk:
+KNAME TYPE FSTYPE        SIZE LABEL
+sda   disk             931.5G
+sda1  part vfat          512M
+sda2  part ext2          244M
+sda3  part LVM2_member 930.8G
+dm-0  lvm  ext4        922.9G
+dm-1  lvm  swap          7.9G
+sdb   disk               7.5G
+sdb1  part vfat          7.5G UBUNTU 14_0
+sr0   rom               1024M
+loop0 loop squashfs    975.9M
+
+KNAME ROTA RO RM STATE   MOUNTPOINT
+sda      1  0  0 running
+sda1     1  0  0         /mnt/boot-sav/mapper/ubuntu--vg-root/boot/efi
+sda2     1  0  0         /mnt/boot-sav/mapper/ubuntu--vg-root/boot
+sda3     1  0  0
+dm-0     1  0  0 running /mnt/boot-sav/mapper/ubuntu--vg-root
+dm-1     1  0  0 running
+sdb      1  0  1 running
+sdb1     1  0  1         /cdrom
+sr0      1  0  1 running
+loop0    1  1  0         /rofs
+
+
+=================== mount:
+/cow on / type overlay (rw)
+proc on /proc type proc (rw,noexec,nosuid,nodev)
+sysfs on /sys type sysfs (rw,noexec,nosuid,nodev)
+udev on /dev type devtmpfs (rw,mode=0755)
+devpts on /dev/pts type devpts (rw,noexec,nosuid,gid=5,mode=0620)
+tmpfs on /run type tmpfs (rw,noexec,nosuid,size=10%,mode=0755)
+/dev/sdb1 on /cdrom type vfat (ro,noatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro)
+/dev/loop0 on /rofs type squashfs (ro,noatime)
+none on /sys/fs/cgroup type tmpfs (rw)
+none on /sys/fs/fuse/connections type fusectl (rw)
+none on /sys/kernel/debug type debugfs (rw)
+none on /sys/kernel/security type securityfs (rw)
+none on /sys/firmware/efi/efivars type efivarfs (rw)
+tmpfs on /tmp type tmpfs (rw,nosuid,nodev)
+none on /run/lock type tmpfs (rw,noexec,nosuid,nodev,size=5242880)
+none on /run/shm type tmpfs (rw,nosuid,nodev)
+none on /run/user type tmpfs (rw,noexec,nosuid,nodev,size=104857600,mode=0755)
+none on /sys/fs/pstore type pstore (rw)
+systemd on /sys/fs/cgroup/systemd type cgroup (rw,noexec,nosuid,nodev,none,name=systemd)
+gvfsd-fuse on /run/user/999/gvfs type fuse.gvfsd-fuse (rw,nosuid,nodev,user=ubuntu)
+/dev/mapper/ubuntu--vg-root on /mnt/boot-sav/mapper/ubuntu--vg-root type ext4 (rw)
+/dev on /mnt/boot-sav/mapper/ubuntu--vg-root/dev type none (rw,bind)
+/dev/pts on /mnt/boot-sav/mapper/ubuntu--vg-root/dev/pts type none (rw,bind)
+/proc on /mnt/boot-sav/mapper/ubuntu--vg-root/proc type none (rw,bind)
+/run on /mnt/boot-sav/mapper/ubuntu--vg-root/run type none (rw,bind)
+/sys on /mnt/boot-sav/mapper/ubuntu--vg-root/sys type none (rw,bind)
+/dev/sda2 on /mnt/boot-sav/mapper/ubuntu--vg-root/boot type ext2 (rw)
+/dev on /mnt/boot-sav/mapper/ubuntu--vg-root/dev type none (rw,bind)
+/dev on /mnt/boot-sav/mapper/ubuntu--vg-root/dev type none (rw,bind)
+/dev/pts on /mnt/boot-sav/mapper/ubuntu--vg-root/dev/pts type none (rw,bind)
+/proc on /mnt/boot-sav/mapper/ubuntu--vg-root/proc type none (rw,bind)
+/run on /mnt/boot-sav/mapper/ubuntu--vg-root/run type none (rw,bind)
+/sys on /mnt/boot-sav/mapper/ubuntu--vg-root/sys type none (rw,bind)
+/dev/sda1 on /mnt/boot-sav/mapper/ubuntu--vg-root/boot/efi type vfat (rw)
+
+
+=================== ls:
+/sys/block/dm-0 (filtered):  alignment_offset bdi capability dev discard_alignment dm ext_range holders inflight power queue range removable ro size slaves stat subsystem trace uevent
+/sys/block/dm-1 (filtered):  alignment_offset bdi capability dev discard_alignment dm ext_range holders inflight power queue range removable ro size slaves stat subsystem trace uevent
+/sys/block/sda (filtered):  alignment_offset bdi capability dev device discard_alignment events events_async events_poll_msecs ext_range holders inflight power queue range removable ro sda1 sda2 sda3 size slaves stat subsystem trace uevent
+/sys/block/sdb (filtered):  alignment_offset bdi capability dev device discard_alignment events events_async events_poll_msecs ext_range holders inflight power queue range removable ro sdb1 size slaves stat subsystem trace uevent
+/sys/block/sr0 (filtered):  alignment_offset bdi capability dev device discard_alignment events events_async events_poll_msecs ext_range holders inflight power queue range removable ro size slaves stat subsystem trace uevent
+/dev (filtered):  autofs block bsg btrfs-control bus cdrom char console core cpu cpu_dma_latency cuse disk dm-0 dm-1 dri ecryptfs fb0 fd full fuse hidraw0 hidraw1 hpet hwrng i2c-0 i2c-1 i2c-10 i2c-11 i2c-12 i2c-13 i2c-14 i2c-15 i2c-16 i2c-17 i2c-18 i2c-2 i2c-3 i2c-4 i2c-5 i2c-6 i2c-7 i2c-8 i2c-9 input kmsg kvm log mapper mcelog media0 mei0 mem memory_bandwidth ndctl0 net network_latency network_throughput null port ppp psaux ptmx pts random rfkill rtc rtc0 sda sda1 sda2 sda3 sdb sdb1 sg0 sg1 sg2 shm snapshot snd sr0 stderr stdin stdout ubuntu-vg uhid uinput urandom v4l vfio vga_arbiter vhci vhost-net video0 zero
+ls /dev/mapper:  control ubuntu--vg-root ubuntu--vg-swap_1
+
+=================== hexdump -n512 -C /dev/sda1
+00000000  eb 58 90 6d 6b 66 73 2e  66 61 74 00 02 08 20 00  |.X.mkfs.fat... .|
+00000010  02 00 00 00 00 f8 00 00  3f 00 ff 00 00 08 00 00  |........?.......|
+00000020  00 00 10 00 fe 03 00 00  00 00 00 00 02 00 00 00  |................|
+00000030  01 00 06 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
+00000040  80 01 29 4e 48 07 8a 4e  4f 20 4e 41 4d 45 20 20  |..)NH..NO NAME  |
+00000050  20 20 46 41 54 33 32 20  20 20 0e 1f be 77 7c ac  |  FAT32   ...w|.|
+00000060  22 c0 74 0b 56 b4 0e bb  07 00 cd 10 5e eb f0 32  |".t.V.......^..2|
+00000070  e4 cd 16 cd 19 eb fe 54  68 69 73 20 69 73 20 6e  |.......This is n|
+00000080  6f 74 20 61 20 62 6f 6f  74 61 62 6c 65 20 64 69  |ot a bootable di|
+00000090  73 6b 2e 20 20 50 6c 65  61 73 65 20 69 6e 73 65  |sk.  Please inse|
+000000a0  72 74 20 61 20 62 6f 6f  74 61 62 6c 65 20 66 6c  |rt a bootable fl|
+000000b0  6f 70 70 79 20 61 6e 64  0d 0a 70 72 65 73 73 20  |oppy and..press |
+000000c0  61 6e 79 20 6b 65 79 20  74 6f 20 74 72 79 20 61  |any key to try a|
+000000d0  67 61 69 6e 20 2e 2e 2e  20 0d 0a 00 00 00 00 00  |gain ... .......|
+000000e0  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
+*
+000001f0  00 00 00 00 00 00 00 00  00 00 00 00 00 00 55 aa  |..............U.|
+00000200
+
+WARNING: GPT (GUID Partition Table) detected on '/dev/sda'! The util fdisk doesn't support GPT. Use GNU Parted.
+
+Disk /dev/mapper/ubuntu--vg-root doesn't contain a valid partition table
+Disk /dev/mapper/ubuntu--vg-swap_1 doesn't contain a valid partition table
+
+=================== df -Th:
+
+Filesystem                  Type      Size  Used Avail Use% Mounted on
+udev                        devtmpfs  3.9G   12K  3.9G   1% /dev
+tmpfs                       tmpfs     790M  1.5M  789M   1% /run
+/dev/sdb1                   vfat      7.5G  1.1G  6.5G  14% /cdrom
+/dev/loop0                  squashfs  976M  976M     0 100% /rofs
+/cow                        overlay   3.9G  143M  3.8G   4% /
+none                        tmpfs     4.0K     0  4.0K   0% /sys/fs/cgroup
+tmpfs                       tmpfs     3.9G   64K  3.9G   1% /tmp
+none                        tmpfs     5.0M     0  5.0M   0% /run/lock
+none                        tmpfs     3.9G  408K  3.9G   1% /run/shm
+none                        tmpfs     100M   68K  100M   1% /run/user
+/dev/mapper/ubuntu--vg-root ext4      909G  3.5G  859G   1% /mnt/boot-sav/mapper/ubuntu--vg-root
+/dev/sda2                   ext2      237M   46M  179M  21% /mnt/boot-sav/mapper/ubuntu--vg-root/boot
+/dev/sda1                   vfat      511M  3.5M  508M   1% /mnt/boot-sav/mapper/ubuntu--vg-root/boot/efi
+
+=================== fdisk -l:
+
+Disk /dev/sda: 1000.2 GB, 1000204886016 bytes
+255 heads, 63 sectors/track, 121601 cylinders, total 1953525168 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 4096 bytes
+I/O size (minimum/optimal): 4096 bytes / 4096 bytes
+Disk identifier: 0x00000000
+
+Device Boot      Start         End      Blocks   Id  System
+/dev/sda1               1  1953525167   976762583+  ee  GPT
+Partition 1 does not start on physical sector boundary.
+
+Disk /dev/sdb: 8004 MB, 8004304896 bytes
+255 heads, 63 sectors/track, 973 cylinders, total 15633408 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk identifier: 0x09daedb0
+
+Device Boot      Start         End      Blocks   Id  System
+/dev/sdb1   *        2048    15633407     7815680    c  W95 FAT32 (LBA)
+
+Disk /dev/mapper/ubuntu--vg-root: 990.9 GB, 990904320000 bytes
+255 heads, 63 sectors/track, 120470 cylinders, total 1935360000 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 4096 bytes
+I/O size (minimum/optimal): 4096 bytes / 4096 bytes
+Disk identifier: 0x00000000
+
+
+Disk /dev/mapper/ubuntu--vg-swap_1: 8493 MB, 8493465600 bytes
+255 heads, 63 sectors/track, 1032 cylinders, total 16588800 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 4096 bytes
+I/O size (minimum/optimal): 4096 bytes / 4096 bytes
+Disk identifier: 0x00000000
+
+
+/boot detected. Please check the options.
+
+
+=================== Default settings of Boot Repair
+The default repair of the Boot-Repair utility would purge (in order to fix packages sign-grub enable-raid enable-lvm fix executable) and reinstall the grub-efi-amd64-signed of mapper/ubuntu--vg-root, using the following options:        sda1/boot/efi,
+Additional repair would be performed: unhide-bootmenu-10s    use-standard-efi-file rename-ms-efi
+
+
+=================== User settings
+The settings chosen by the user will purge (in order to fix packages sign-grub enable-raid enable-lvm fix executable) and reinstall the grub-efi-amd64-signed of mapper/ubuntu--vg-root, using the following options:        sda1/boot/efi,
+Additional repair will be performed: unhide-bootmenu-10s repair-filesystems   use-standard-efi-file rename-ms-efi
+
+
+Force Unmount all blkid partitions (for fsck) except / /boot /cdrom /dev /etc /home /opt /pas /proc /rofs /sys /tmp /usr /var
+
+fsck -fyM /dev/sda1
+fsck from util-linux 2.20.1
+fsck.fat 3.0.26 (2014-03-07)
+/dev/sda1: 8 files, 881/130812 clusters
+
+fsck -fyM /dev/sda2
+fsck from util-linux 2.20.1
+e2fsck 1.42.9 (4-Feb-2014)
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+/dev/sda2: 292/62496 files (20.9% non-contiguous), 54381/249856 blocks
+
+fsck -fyM /dev/mapper/ubuntu--vg-root
+fsck from util-linux 2.20.1
+Created mapper/ubuntu--vg-root/boot/efi
+Mount sda1 on /mnt/boot-sav/mapper/ubuntu--vg-root/boot/efi
+ls sda1/efi: /ubuntu/shimx64.efi /ubuntu/MokManager.efi /ubuntu/grubx64.efi /ubuntu/grub.cfg /ubuntu/fwupx64.efi /ubuntu/fw
+chroot /mnt/boot-sav/mapper/ubuntu--vg-root apt-get -y --force-yes update
+E: Could not get lock /var/lib/apt/lists/lock - open (11: Resource temporarily unavailable)
+E: Unable to lock directory /var/lib/apt/lists/
+E: dpkg was interrupted, you must manually run 'sudo dpkg --configure -a' to correct the problem.
+Purge the GRUB of mapper/ubuntu--vg-root
+cp: cannot stat ‚Äò/mnt/boot-sav/mapper/ubuntu--vg-root/etc/default/grub‚Äô: No such file or directory
+grub-efi-amd64-signed available
+E: dpkg was interrupted, you must manually run 'sudo dpkg --configure -a' to correct the problem.
+DEBCHECK debNG, grub-efi-amd64-signed
+DEBCHECK debNG
+=================== grub-efi-amd64-signed purge cancelled
+dpkg-error detected. Please open a terminal then type (or copy-paste) the following command:
+
+sudo chroot "/mnt/boot-sav/mapper/ubuntu--vg-root" dpkg --configure -a
+
+Then close this window.
+
+
+=================== Default settings of Boot Repair
+The default repair of the Boot-Repair utility would purge (in order to fix packages sign-grub enable-raid enable-lvm fix executable) and reinstall the grub-efi-amd64-signed of mapper/ubuntu--vg-root, using the following options:        sda1/boot/efi,
+Additional repair would be performed: unhide-bootmenu-10s    use-standard-efi-file rename-ms-efi
+
+
+=================== User settings
+The settings chosen by the user will purge (in order to fix packages sign-grub enable-raid enable-lvm fix executable) and reinstall the grub-efi-amd64-signed of mapper/ubuntu--vg-root, using the following options:        sda1/boot/efi,
+Additional repair will be performed: unhide-bootmenu-10s repair-filesystems   use-standard-efi-file rename-ms-efi
+
+
+Force Unmount all blkid partitions (for fsck) except / /boot /cdrom /dev /etc /home /opt /pas /proc /rofs /sys /tmp /usr /var
+
+fsck -fyM /dev/sda1
+fsck from util-linux 2.20.1
+fsck.fat 3.0.26 (2014-03-07)
+/dev/sda1: 8 files, 881/130812 clusters
+
+fsck -fyM /dev/sda2
+fsck from util-linux 2.20.1
+
+fsck -fyM /dev/mapper/ubuntu--vg-root
+fsck from util-linux 2.20.1
+Mount sda1 on /mnt/boot-sav/mapper/ubuntu--vg-root/boot/efi
+ls sda1/efi: /ubuntu/shimx64.efi /ubuntu/MokManager.efi /ubuntu/grubx64.efi /ubuntu/grub.cfg /ubuntu/fwupx64.efi /ubuntu/fw
+chroot /mnt/boot-sav/mapper/ubuntu--vg-root apt-get -y --force-yes update
+E: Could not get lock /var/lib/apt/lists/lock - open (11: Resource temporarily unavailable)
+E: Unable to lock directory /var/lib/apt/lists/
+Purge the GRUB of mapper/ubuntu--vg-root
+cp: cannot stat ‚Äò/mnt/boot-sav/mapper/ubuntu--vg-root/etc/default/grub‚Äô: No such file or directory
+grub-efi-amd64-signed available
+
+The following package was automatically installed and is no longer required:
+shim
+Use 'apt-get autoremove' to remove it.
+The following extra packages will be installed:
+grub-common grub-efi-amd64 grub-efi-amd64-bin grub2-common
+Suggested packages:
+multiboot-doc grub-emu xorriso desktop-base
+The following NEW packages will be installed:
+grub-common grub-efi-amd64 grub-efi-amd64-bin grub-efi-amd64-signed
+grub2-common
+0 upgraded, 5 newly installed, 0 to remove and 315 not upgraded.
+DEBCHECK debOK, grub-efi-amd64-signed
+DEBCHECK debOK
+shim-signed available
+linux-signed-generic available
+Then type: sudo chroot "/mnt/boot-sav/mapper/ubuntu--vg-root" dpkg --configure -ansudo chroot "/mnt/boot-sav/mapper/ubuntu--vg-root" apt-get install -fynsudo chroot "/mnt/boot-sav/mapper/ubuntu--vg-root" apt-get install -y --force-yes mdadmnsudo chroot "/mnt/boot-sav/mapper/ubuntu--vg-root" mdadm --assemble --scannsudo chroot "/mnt/boot-sav/mapper/ubuntu--vg-root" apt-get install -y --force-yes lvm2nsudo chroot "/mnt/boot-sav/mapper/ubuntu--vg-root" apt-get install -y --force-yes grub-efi-amd64-signed shim-signed linux-signed-generic
+No mapper/ubuntu--vg-root/etc/default/grub
+
+=================== mapper/ubuntu--vg-root/etc/grub.d/ :
+drwxr-xr-x  2 root root    4096 Mar 11 08:52 grub.d
+drwxr-xr-x  2 root root    4096 Mar 10 17:37 grub.d.bak
+total 72
+-rwxr-xr-x 1 root root  9791 Aug  2  2016 00_header.dpkg-new
+-rwxr-xr-x 1 root root  6058 May 13  2015 05_debian_theme.dpkg-new
+-rwxr-xr-x 1 root root 11608 Aug  2  2016 10_linux.dpkg-new
+-rwxr-xr-x 1 root root 10412 Aug  2  2016 20_linux_xen.dpkg-new
+-rwxr-xr-x 1 root root 11692 Aug  2  2016 30_os-prober.dpkg-new
+-rwxr-xr-x 1 root root  1418 Aug  2  2016 30_uefi-firmware.dpkg-new
+-rwxr-xr-x 1 root root   214 Aug  2  2016 40_custom.dpkg-new
+-rwxr-xr-x 1 root root   216 Aug  2  2016 41_custom.dpkg-new
+-rw-r--r-- 1 root root   483 Aug  2  2016 README.dpkg-new
+
+
+/boot/efi detected in the fstab of mapper/ubuntu--vg-root: UUID=8A07-484E	 (sda1)
+
+=================== mapper/ubuntu--vg-root/etc/mdadm/mdadm.conf :
+# mdadm.conf
+#
+# Please refer to mdadm.conf(5) for information about this file.
+#
+
+# by default (built-in), scan all partitions (/proc/partitions) and all
+# containers for MD superblocks. alternatively, specify devices to scan, using
+# wildcards if desired.
+#DEVICE partitions containers
+
+# auto-create devices with Debian standard permissions
+CREATE owner=root group=disk mode=0660 auto=yes
+
+# automatically tag new arrays as belonging to the local system
+HOMEHOST <system>
+
+# instruct the monitoring daemon where to send mail alerts
+MAILADDR root
+
+# definitions of existing MD arrays
+
+# This file was auto-generated on Sat, 11 Mar 2017 14:08:20 +0530
+# by mkconf $Id$
+
+
+
+
+=================== mapper/ubuntu--vg-root/proc/mdstat :
+Personalities :
+unused devices: <none>
+
+
+
+No mapper/ubuntu--vg-root/etc/default/grub
+
+=================== mapper/ubuntu--vg-root/etc/grub.d/ :
+drwxr-xr-x  2 root root    4096 Mar 11 08:52 grub.d
+drwxr-xr-x  2 root root    4096 Mar 10 17:37 grub.d.bak
+total 72
+-rwxr-xr-x 1 root root  9791 Aug  2  2016 00_header.dpkg-new
+-rwxr-xr-x 1 root root  6058 May 13  2015 05_debian_theme.dpkg-new
+-rwxr-xr-x 1 root root 11608 Aug  2  2016 10_linux.dpkg-new
+-rwxr-xr-x 1 root root 10412 Aug  2  2016 20_linux_xen.dpkg-new
+-rwxr-xr-x 1 root root 11692 Aug  2  2016 30_os-prober.dpkg-new
+-rwxr-xr-x 1 root root  1418 Aug  2  2016 30_uefi-firmware.dpkg-new
+-rwxr-xr-x 1 root root   214 Aug  2  2016 40_custom.dpkg-new
+-rwxr-xr-x 1 root root   216 Aug  2  2016 41_custom.dpkg-new
+-rw-r--r-- 1 root root   483 Aug  2  2016 README.dpkg-new
+
+
+/boot/efi detected in the fstab of mapper/ubuntu--vg-root: UUID=8A07-484E	 (sda1)
+
+=================== mapper/ubuntu--vg-root/etc/mdadm/mdadm.conf :
+# mdadm.conf
+#
+# Please refer to mdadm.conf(5) for information about this file.
+#
+
+# by default (built-in), scan all partitions (/proc/partitions) and all
+# containers for MD superblocks. alternatively, specify devices to scan, using
+# wildcards if desired.
+#DEVICE partitions containers
+
+# auto-create devices with Debian standard permissions
+CREATE owner=root group=disk mode=0660 auto=yes
+
+# automatically tag new arrays as belonging to the local system
+HOMEHOST <system>
+
+# instruct the monitoring daemon where to send mail alerts
+MAILADDR root
+
+# definitions of existing MD arrays
+
+# This file was auto-generated on Sat, 11 Mar 2017 14:08:20 +0530
+# by mkconf $Id$
+
+
+
+
+=================== mapper/ubuntu--vg-root/proc/mdstat :
+Personalities :
+unused devices: <none>
+
+
+
+
+*******lspci -nnk | grep -iA3 vga
+00:02.0 VGA compatible controller [0300]: Intel Corporation Broadwell-U Integrated Graphics [8086:1616] (rev 09)
+Subsystem: Dell Device [1028:06ae]
+Kernel driver in use: i915
+00:03.0 Audio device [0403]: Intel Corporation Broadwell-U Audio Controller [8086:160c] (rev 09)
+*******
+
+grub-install --version
+grub-install (GRUB) 2.02~beta2-9ubuntu1.12,grub-install (GRUB) 2.
+
+chroot /mnt/boot-sav/mapper/ubuntu--vg-root efibootmgr -v
+BootCurrent: 0007
+Timeout: 1 seconds
+BootOrder: 0001,0002,0003,0004,0005,0007
+Boot0001* Diskette Drive	BIOS(1,0,4469736b6574746520447269766500)..BO
+Boot0002* Internal HDD	BIOS(2,0,50303a205354313030304c4d30323420484e2d4d3130314d42422020202000)..BO
+Boot0003* USB Storage Device	BIOS(5,0,53616e4469736b2055534220466c61736820447269766520312e323600)..BO
+Boot0004* CD/DVD/CD-RW Drive	BIOS(3,0,50313a2054535354636f7270204456442b2f2d52572053552d323038474200)..BO
+Boot0005* Onboard NIC	BIOS(6,0,5265616c74656b20505845204230372044303000)..BO
+Boot0007* UEFI: SanDisk USB Flash Drive 1.26	ACPI(a0341d0,0)PCI(14,0)USB(1,0)HD(1,800,ee8400,09daedb0)..BO
+Boot0010* USB Storage Device	BIOS(5,0,5553422053746f726167652044657669636500)..BO
+Boot0011* CD/DVD/CD-RW Drive	BIOS(3,0,50313a2054535354636f7270204456442b2f2d52572053552d323038474200)..BO
+Boot0012* Onboard NIC	BIOS(6,0,5265616c74656b20505845204230372044303000)..BO
+Boot0014* UEFI: ST1000LM024 HN-M101MBB	ACPI(a0341d0,0)PCI(1f,2)03120a000000ffff0000HD(1,800,fa000,0a9a9f6b-8cff-4eac-b1ff-87335f8e6f23)..BO
+BootFFF7* Fix my Dell          	Vendor(5990c250-676b-4ff7-8a0d-529319d0b254,)
+BootFFF8* Fix my Dell          	Vendor(5990c250-676b-4ff7-8a0d-529319d0b254,)
+BootFFFB* Diagnostic Boot      	Vendor(5990c250-676b-4ff7-8a0d-529319d0b254,)
+BootFFFC* Temporary Boot Menu  	Vendor(5990c250-676b-4ff7-8a0d-529319d0b254,)
+BootFFFD* Graphic Setup        	Vendor(5990c250-676b-4ff7-8a0d-529319d0b254,)
+BootFFFE* Text Setup           	Vendor(5990c250-676b-4ff7-8a0d-529319d0b254,)
+
+chroot /mnt/boot-sav/mapper/ubuntu--vg-root uname -r
+Kernel: 4.2.0-27-generic
+
+Reinstall the grub-efi-amd64-signed shim-signed linux-signed-generic of mapper/ubuntu--vg-root
+Installing for x86_64-efi platform.
+File descriptor 9 (/proc/27492/mounts) leaked on vgs invocation. Parent PID 28253: grub-install
+File descriptor 63 (pipe:[71496]) leaked on vgs invocation. Parent PID 28253: grub-install
+File descriptor 9 (/proc/27492/mounts) leaked on vgs invocation. Parent PID 28253: grub-install
+File descriptor 63 (pipe:[71496]) leaked on vgs invocation. Parent PID 28253: grub-install
+grub-install: error: /boot/efi doesn't look like an EFI partition.
+.
+grub-install --efi-directory=/boot/efi --target=x86_64-efi --uefi-secure-boot : exit code of grub-install :1
+Error: no grub*.efi generated. Please report this message to boot.repair@gmail.com
+
+Add /mnt/boot-sav/sda2 efi entries in /mnt/boot-sav/mapper/ubuntu--vg-root/etc/grub.d/25_custom
+
+---- Grub-install verbose
+/usr/sbin/grub-install: 1: /usr/sbin/grub-install: cannot open ú: No such file
++ ELF @@@@@@¯¯88@8@@@ú ==n=nû{ Å  ¡Ä 0I
+/usr/sbin/grub-install: 1: /usr/sbin/grub-install: ELF: not found
+/usr/sbin/grub-install: 2: /usr/sbin/grub-install: Syntax error: word unexpected (expecting ")")
+--------
+/usr/sbin/grub-install --efi-directory=/boot/efi --target=x86_64-efi --uefi-secure-boot : exit code of grub-install :2
+---- End of grub-install verbose
+
+
+chroot /mnt/boot-sav/mapper/ubuntu--vg-root efibootmgr -v
+BootCurrent: 0007
+Timeout: 1 seconds
+BootOrder: 0001,0002,0003,0004,0005,0007
+Boot0001* Diskette Drive	BIOS(1,0,4469736b6574746520447269766500)..BO
+Boot0002* Internal HDD	BIOS(2,0,50303a205354313030304c4d30323420484e2d4d3130314d42422020202000)..BO
+Boot0003* USB Storage Device	BIOS(5,0,53616e4469736b2055534220466c61736820447269766520312e323600)..BO
+Boot0004* CD/DVD/CD-RW Drive	BIOS(3,0,50313a2054535354636f7270204456442b2f2d52572053552d323038474200)..BO
+Boot0005* Onboard NIC	BIOS(6,0,5265616c74656b20505845204230372044303000)..BO
+Boot0007* UEFI: SanDisk USB Flash Drive 1.26	ACPI(a0341d0,0)PCI(14,0)USB(1,0)HD(1,800,ee8400,09daedb0)..BO
+Boot0010* USB Storage Device	BIOS(5,0,5553422053746f726167652044657669636500)..BO
+Boot0011* CD/DVD/CD-RW Drive	BIOS(3,0,50313a2054535354636f7270204456442b2f2d52572053552d323038474200)..BO
+Boot0012* Onboard NIC	BIOS(6,0,5265616c74656b20505845204230372044303000)..BO
+Boot0014* UEFI: ST1000LM024 HN-M101MBB	ACPI(a0341d0,0)PCI(1f,2)03120a000000ffff0000HD(1,800,fa000,0a9a9f6b-8cff-4eac-b1ff-87335f8e6f23)..BO
+BootFFF7* Fix my Dell          	Vendor(5990c250-676b-4ff7-8a0d-529319d0b254,)
+BootFFF8* Fix my Dell          	Vendor(5990c250-676b-4ff7-8a0d-529319d0b254,)
+BootFFFB* Diagnostic Boot      	Vendor(5990c250-676b-4ff7-8a0d-529319d0b254,)
+BootFFFC* Temporary Boot Menu  	Vendor(5990c250-676b-4ff7-8a0d-529319d0b254,)
+BootFFFD* Graphic Setup        	Vendor(5990c250-676b-4ff7-8a0d-529319d0b254,)
+BootFFFE* Text Setup           	Vendor(5990c250-676b-4ff7-8a0d-529319d0b254,)
+
+chroot /mnt/boot-sav/mapper/ubuntu--vg-root update-grub
+Generating grub configuration file ...
+Script `/boot/grub/grub.cfg.new' contains no commands and will do nothing
+Syntax errors are detected in generated GRUB config file.
+Ensure that there are no errors in /etc/default/grub
+and /etc/grub.d/* files or please file a bug report with
+/boot/grub/grub.cfg.new file attached.
+umount: /mnt/boot-sav/mapper/ubuntu--vg-root/boot/efi: not mounted
+umount: /mnt/boot-sav/mapper/ubuntu--vg-root/dev/pts: not mounted
+
+An error occurred during the repair.
+
+You can now reboot your computer.
+
